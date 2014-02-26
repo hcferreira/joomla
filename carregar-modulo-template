@@ -1,0 +1,15 @@
+<?php
+
+// Carregar modulo em template joomla 2.5
+
+	$position = ‘k2zone1’;
+	$params = array(‘style’=>’gk_style’);
+	$document = &JFactory::getDocument();
+	$renderer = $document→loadRenderer(‘module’);
+	$contents = ’’;
+	foreach (JModuleHelper::getModules($position) as $mod) {
+	$contents .= $renderer→render($mod, $params);
+}
+echo $contents;
+
+?>
